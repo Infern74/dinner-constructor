@@ -21,6 +21,7 @@ public class DinnerConstructor {
             ArrayList<String> dishNames = new ArrayList<>();
             dishNames.add(dishName);
             dinnerMenu.put(dishType, dishNames);
+            System.out.println(dinnerMenu);
         }
     }
 

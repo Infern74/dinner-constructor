@@ -12,7 +12,7 @@ public class Main {
         while (true) {
             System.out.println("-".repeat(35));
             printMenu();
-            String command = scanner.nextLine();
+            String command = scanner.nextLine().trim();
             System.out.println("-".repeat(35));
 
             switch (command) {
@@ -40,9 +40,9 @@ public class Main {
 
     private static void addNewDish() {
         System.out.println("Введите тип блюда:");
-        String dishType = scanner.nextLine();
+        String dishType = scanner.nextLine().trim();
         System.out.println("Введите название блюда:");
-        String dishName = scanner.nextLine();
+        String dishName = scanner.nextLine().trim();
 
         dc.addNewDish(dishType, dishName); // добавьте новое блюдо
     }
@@ -55,12 +55,12 @@ public class Main {
         scanner.nextLine();
 
         System.out.println("Вводите типы блюда, разделяя символом переноса строки (enter). Для завершения ввода введите пустую строку");
-        String nextItem = scanner.nextLine();
+        String nextItem = scanner.nextLine().trim();
 
         // ввод типов блюд
         while (!nextItem.isEmpty()) {
             dc.saveTypeForDishCombo(nextItem);
-            nextItem = scanner.nextLine();
+            nextItem = scanner.nextLine().trim();
         }
 
         dc.generateDishCombo(numberOfCombos); // генерация комбинаций блюд и вывод на экран
